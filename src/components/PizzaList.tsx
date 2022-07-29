@@ -1,9 +1,14 @@
-import PizzaItem from "./PizzaItem";
+import { useSelector } from "react-redux";
 
 const PizzaList = () => {
+  // @ts-ignore
+  const pizza = useSelector((state) => state.pizza);
+
   return (
     <div>
-      <PizzaItem />
+      {pizza.map((item: any) => (
+        <div>{item}</div>
+      ))}
     </div>
   );
 };
